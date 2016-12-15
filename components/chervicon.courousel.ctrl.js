@@ -16,7 +16,7 @@ angular
   slides.push({
   image: '/images/' + newArrayItem,
   text: ['Instructor talking to a participant','Particpants listening attentively','Particpants concentrating in class','Assisting a participant','Being Assisted by the Instructor',
-  'checking out the menu','Enjoying a talk with the Particpants','Particpants relaxing after Graduation','Waiter during Breaks','Waiter serving students','Break time','Being served by the waiter','Particpants taking part in classes','Class Sessions'][slides.length % 14],
+  'checking out the menu','role play-Waitressing','Participants doing a role play in the Hospitality course - Waitressing','Role Waitressing play','Waitressing play','Break time','Role play','Particpants taking part in classes','Class Sessions'][slides.length % 14],
     id: currIndex++
 });
 

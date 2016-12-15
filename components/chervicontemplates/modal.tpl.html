@@ -1,0 +1,90 @@
+<div ng-controller="cherviconModalCtrl as $ctrl" class="modal-demo">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">Course Details/Prices</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <ul>
+                <li ng-repeat="item in $ctrl.items">
+                    <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ $ctrl.selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+        </div>
+    </script>
+    <script type="text/ng-template" id="stackedModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title-{{name}}">The {{name}} modal!</h3>
+        </div>
+        <div class="modal-body" id="modal-body-{{name}}">
+            Having multiple modals open at once is probably bad UX but it's technically possible.
+        </div>
+    </script>
+    <button type="button" class="btn btn-default" ng-click="$ctrl.open('lg')">Large modal</button>
+    
+    <!--<button type="button" class="btn btn-default" ng-click="$ctrl.open()">Open me!</button>
+    
+    <button type="button" class="btn btn-default" ng-click="$ctrl.open('sm')">Small modal</button>
+    <button type="button" 
+        class="btn btn-default" 
+        ng-click="$ctrl.open('sm', '.modal-parent')">
+            Modal appended to a custom parent
+    </button>
+    <button type="button" class="btn btn-default" ng-click="$ctrl.toggleAnimation()">Toggle Animation ({{ $ctrl.animationsEnabled }})</button>
+    <button type="button" class="btn btn-default" ng-click="$ctrl.openComponentModal()">Open a component modal!</button>
+    <button type="button" class="btn btn-default" ng-click="$ctrl.openMultipleModals()">
+        Open multiple modals at once 
+    </button> --> 
+
+
+    <div ng-show="$ctrl.selected">Selection from a modal: {{ $ctrl.selected }}</div>
+    <div class="modal-parent">
+    </div>
+
+
+
+    <div class="list-group">
+  <a href="#" class="list-group-item active">
+    Courses Offered
+  </a>
+  
+  <a href="#" class="list-group-item">Front Desk</a>
+
+  <a href="#" class="list-group-item">House Keeping</a>
+  <a href="#" class="list-group-item">Waitressing</a>
+  <a href="#" class="list-group-item">Kitchen</a>
+   <a href="#" class="list-group-item">Hotel Staff Training</a>
+  <a href="#" class="list-group-item">Building and Establishing Customer Relations</a>
+  <a href="#" class="list-group-item">Waitressing</a>
+  <a href="#" class="list-group-item">Kitchen</a>  
+</div>
+<div class="container"><button class="btn btn-primary" ng-click="$ctrl.open('lg')" class="list-group-item">More Course Info</button></div>
+<!-- Button trigger modal -->
+
+<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#cherviconModal">
+  Launch demo modal
+</button>-->
+
+<!-- Modal -->
+<div class="modal fade" id="cherviconModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
